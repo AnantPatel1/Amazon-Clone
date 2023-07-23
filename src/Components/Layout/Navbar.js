@@ -3,7 +3,11 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchIcon from "@mui/icons-material/Search";
 import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
+import { useStateValue } from "../Cart/StateProvider";
 export default function Navbar() {
+  // const[state, dispatch] = StateProvider();
+  const [{ basket }] = useStateValue();
+  console.log(basket);
   return (
     <Fragment>
       <div className={styles.header}>
@@ -43,7 +47,7 @@ export default function Navbar() {
               <span
                 className={`${styles.header__optionLineTwo} ${styles.header__basketCount}`}
               >
-                0
+                {basket?.length}
               </span>
             </div>
           </Link>
