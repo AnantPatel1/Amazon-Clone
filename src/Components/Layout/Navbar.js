@@ -4,10 +4,17 @@ import SearchIcon from "@mui/icons-material/Search";
 import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../Cart/StateProvider";
+// import { auth } from "../Auth/firebase";
 export default function Navbar() {
   // const[state, dispatch] = StateProvider();
-  const [{ basket }] = useStateValue();
+  const [{ basket, user }] = useStateValue();
   console.log(basket);
+
+  const handleAuthenticaton = () => {
+    // if (user) {
+    //   auth.signOut();
+    // }
+  };
   return (
     <Fragment>
       <div className={styles.header}>
@@ -24,9 +31,16 @@ export default function Navbar() {
 
         <div className={styles.header__nav}>
           <Link to="/login" className={styles.header_link}>
-            <div className={styles.header__option}>
-              <span className={styles.eader__optionLineOne}>Hello Guest</span>
-              <span className={styles.header__optionLineTwo}>Sign In</span>
+            <div
+              onClick={handleAuthenticaton}
+              className={styles.header__option}
+            >
+              <span className={styles.header__optionLineOne}>
+                Hello {!user ? "Guest" : user.email}
+              </span>
+              <span className={styles.header__optionLineTwo}>
+                {user ? "Sign Out" : "Sign In"}
+              </span>
             </div>
           </Link>
           <Link to="/" className={styles.header_link}>
