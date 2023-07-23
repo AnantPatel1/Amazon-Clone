@@ -25,26 +25,28 @@ export default function Navbar() {
               <span className={styles.header__optionLineTwo}>Sign In</span>
             </div>
           </Link>
-          <Link to="/login" className={styles.header_link}>
+          <Link to="/" className={styles.header_link}>
             <div className={styles.header__option}>
               <span className={styles.eader__optionLineOne}>Returns</span>
               <span className={styles.header__optionLineTwo}>& Orders</span>
             </div>
           </Link>
-          <Link to="/login" className={styles.header_link}>
+          <Link to="/" className={styles.header_link}>
             <div className={styles.header__option}>
               <span className={styles.eader__optionLineOne}>Your</span>
               <span className={styles.header__optionLineTwo}>Prime</span>
             </div>
           </Link>
-          <div className={styles.header__optionBasket}>
-            <ShoppingCartIcon />
-            <span
-              className={`${styles.header__optionLineTwo} ${styles.header__basketCount}`}
-            >
-              0
-            </span>
-          </div>
+          <Link to="/checkout" className={styles.header_link}>
+            <div className={styles.header__optionBasket}>
+              <ShoppingCartIcon />
+              <span
+                className={`${styles.header__optionLineTwo} ${styles.header__basketCount}`}
+              >
+                0
+              </span>
+            </div>
+          </Link>
         </div>
       </div>
     </Fragment>
