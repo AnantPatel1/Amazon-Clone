@@ -4,6 +4,7 @@ import RootLayout from "./Store/RootLayout";
 import Header from "./Components/Layout/Header";
 import NavbarCartButton from "./Components/Layout/NavbarCartButton";
 import Checkout from "./Components/Section/Checkout";
+import Login from "./Components/Section/Login";
 function App() {
   const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ function App() {
         {
           path: "checkout",
           element: <Checkout />,
+        },
+        {
+          path: "login",
+          element: <Login />,
         },
       ],
     },
