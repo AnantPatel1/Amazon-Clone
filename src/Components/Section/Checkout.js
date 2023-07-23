@@ -1,10 +1,10 @@
 import React from "react";
+import CheckOutProduct from "../Product/CheckOutProduct";
+import { useStateValue } from "../Cart/StateProvider";
 import classes from "./Checkout.module.css";
 
-import { useStateValue } from "../Cart/StateProvider";
-
 function Checkout() {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket }] = useStateValue();
 
   return (
     <div className={classes.checkout}>
@@ -17,13 +17,18 @@ function Checkout() {
 
         <div>
           <h3>Hello</h3>
-          {/* <h2 className={classes.checkout__title}>Your shopping Basket</h2> */}
+          <h2 className={classes.checkout__title}>Your shopping Basket</h2>
+
+          {basket.map((item) => (
+            <CheckOutProduct
+              id={item.id}
+              title={item.title}
+              image={item.image}
+              price={item.price}
+              rating={item.rating}
+            />
+          ))}
         </div>
-        {basket.length === 0 ? (
-          <h1>This Basket is Empty</h1>
-        ) : (
-          <h2>This is your basket</h2>
-        )}
       </div>
 
       <div className={classes.checkout__right}></div>
