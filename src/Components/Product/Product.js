@@ -21,14 +21,14 @@ function Product({ id, title, image, price, rating }) {
       <div className={styles.product__info}>
         <p>{title}</p>
         <p className={styles.product__price}>
-          <small>$</small>
+          <small>₹</small>
           <strong>{price}</strong>
         </p>
         <div className={styles.product__rating}>
           {Array(rating)
             .fill()
             .map((_, i) => (
-              <p>🌟</p>
+              <p>⭐</p>
             ))}
         </div>
       </div>

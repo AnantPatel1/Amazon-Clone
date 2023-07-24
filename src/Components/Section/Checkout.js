@@ -16,8 +16,11 @@ function Checkout() {
         />
 
         <div>
-          <h3>Hello</h3>
-          <h2 className={classes.checkout__title}>Your shopping Basket</h2>
+          <h2 className={classes.checkout__title}>
+            {basket?.length === 0
+              ? "Your shopping Basket is empty"
+              : "Your Shopping Baket"}
+          </h2>
 
           {basket.map((item) => (
             <CheckOutProduct

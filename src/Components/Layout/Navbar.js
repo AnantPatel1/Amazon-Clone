@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import Logo from "../../Assets/amazon_PNG11.png";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import styles from "./Navbar.module.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -30,11 +31,7 @@ export default function Navbar() {
   return (
     <Fragment>
       <div className={styles.header}>
-        <img
-          className={styles.header__logo}
-          src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-          alt="Logo"
-        />
+        <img className={styles.header__logo} src={Logo} alt="Logo" />
 
         <div className={styles.header__search}>
           <input className={styles.header__searchInput} type="text" />
@@ -61,15 +58,15 @@ export default function Navbar() {
               <span className={styles.header__optionLineTwo}>& Orders</span>
             </div>
           </Link>
-          <Link to="/" className={styles.header_link}>
+          {/* <Link to="/" className={styles.header_link}>
             <div className={styles.header__option}>
               <span className={styles.eader__optionLineOne}>Your</span>
               <span className={styles.header__optionLineTwo}>Prime</span>
             </div>
-          </Link>
+          </Link> */}
           <Link to="/checkout" className={styles.header_link}>
             <div className={styles.header__optionBasket}>
-              <ShoppingCartIcon />
+              <ShoppingCartOutlinedIcon sx={{ transform: "scale(1.5)" }} />
               <span
                 className={`${styles.header__optionLineTwo} ${styles.header__basketCount}`}
               >

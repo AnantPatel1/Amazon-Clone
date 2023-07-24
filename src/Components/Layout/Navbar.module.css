@@ -47,12 +47,16 @@
 .header__optionBasket {
   display: flex;
   align-items: center;
-  color: white;
+  /* background-color: white; */
 }
 
 .header__basketCount {
-  margin-left: 10px;
+  /* margin-left: 10px; */
   margin-right: 10px;
+  background-color: rgb(251, 191, 36);
+  border-radius: 50%;
+  width: 20px;
+  text-align: center;
 }
 
 .header__nav {
