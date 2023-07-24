@@ -3,7 +3,6 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import RootLayout from "./Store/RootLayout";
 import Header from "./Components/Layout/Header";
 import NavbarCartButton from "./Components/Layout/NavbarCartButton";
-import Checkout from "./Components/Section/Checkout";
 import Login from "./Components/Section/Login";
 import { useStateValue } from "./Components/Cart/StateProvider";
 import { useEffect } from "react";
@@ -39,12 +38,8 @@ function App() {
           element: <Header />,
         },
         {
-          path: "contact",
-          element: <NavbarCartButton />,
-        },
-        {
           path: "checkout",
-          element: <Checkout />,
+          element: <NavbarCartButton />,
         },
         {
           path: "login",

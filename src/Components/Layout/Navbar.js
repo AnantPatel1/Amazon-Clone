@@ -31,8 +31,9 @@ export default function Navbar() {
   return (
     <Fragment>
       <div className={styles.header}>
-        <img className={styles.header__logo} src={Logo} alt="Logo" />
-
+        <Link to="/">
+          <img className={styles.header__logo} src={Logo} alt="Logo" />
+        </Link>
         <div className={styles.header__search}>
           <input className={styles.header__searchInput} type="text" />
           <SearchIcon className={styles.header__searchIcon} />
@@ -58,12 +59,6 @@ export default function Navbar() {
               <span className={styles.header__optionLineTwo}>& Orders</span>
             </div>
           </Link>
-          {/* <Link to="/" className={styles.header_link}>
-            <div className={styles.header__option}>
-              <span className={styles.eader__optionLineOne}>Your</span>
-              <span className={styles.header__optionLineTwo}>Prime</span>
-            </div>
-          </Link> */}
           <Link to="/checkout" className={styles.header_link}>
             <div className={styles.header__optionBasket}>
               <ShoppingCartOutlinedIcon sx={{ transform: "scale(1.5)" }} />

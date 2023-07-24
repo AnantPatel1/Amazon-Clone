@@ -6,7 +6,35 @@ import image1 from "../../Assets/AF-Unrec-3000._CB600722535_.jpg";
 import image2 from "../../Assets/D70978891_INWLD_BAU_Unrec_Uber_PC_Hero_3000x1200._CB594707876_.jpg";
 import image3 from "../../Assets/TallHero_3000X1200_Unrec._CB593464763_.jpg";
 import image4 from "../../Assets/BAU_FJ_PC_3000x1200._CB614018780_.jpg";
-function Header() {
+const Header = () => {
+  const dummyProducts = [
+    {
+      id: "3",
+      title: "Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor",
+      price: 199.99,
+      rating: 3,
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/71Swqqe7XAL._AC_SX466_.jpg",
+    },
+    {
+      id: "4",
+      title:
+        "Amazon Echo (3rd generation) | Smart speaker with Alexa, Charcoal Fabric",
+      price: 98.99,
+      rating: 5,
+      image:
+        "https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$",
+    },
+    {
+      id: "5",
+      title:
+        "New Apple iPad Pro (12.9-inch, Wi-Fi, 128GB) - Silver (4th Generation)",
+      price: 598.99,
+      rating: 4,
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/816ctt5WV5L._AC_SX385_.jpg",
+    },
+  ];
   return (
     <Fragment>
       <div className={styles.header}>
@@ -59,27 +87,16 @@ function Header() {
           </div>
 
           <div className={styles.home__row}>
-            <Product
-              id="4903850"
-              title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor"
-              price={199.99}
-              rating={3}
-              image="https://images-na.ssl-images-amazon.com/images/I/71Swqqe7XAL._AC_SX466_.jpg"
-            />
-            <Product
-              id="23445930"
-              title="Amazon Echo (3rd generation) | Smart speaker with Alexa, Charcoal Fabric"
-              price={98.99}
-              rating={5}
-              image="https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$"
-            />
-            <Product
-              id="3254354345"
-              title="New Apple iPad Pro (12.9-inch, Wi-Fi, 128GB) - Silver (4th Generation)"
-              price={598.99}
-              rating={4}
-              image="https://images-na.ssl-images-amazon.com/images/I/816ctt5WV5L._AC_SX385_.jpg"
-            />
+            {dummyProducts.map((item) => (
+              <Product
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                price={item.price}
+                rating={item.rating}
+                image={item.image}
+              />
+            ))}
           </div>
 
           <div className={styles.home__row}>
@@ -95,6 +112,6 @@ function Header() {
       </div>
     </Fragment>
   );
-}
+};
 
 export default Header;
