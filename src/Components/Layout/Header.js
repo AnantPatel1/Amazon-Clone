@@ -9,6 +9,7 @@ import jwelbanner from "../../Assets/jwelery.jpg";
 import menbanner from "../../Assets/ACS_Men_3000x770._CB600167215_.jpg";
 import AvailableProduct from "../Product/AvailableProduct";
 import Jwelery from "../Product/ItemTypes/Jwelery";
+import Men from "../Product/ItemTypes/Men";
 const Header = () => {
   return (
     <Fragment>
@@ -56,6 +57,7 @@ const Header = () => {
             alt="jwelery"
             className={styles.jwelery_banner}
           />
+          <Men />
         </div>
       </div>
     </Fragment>
