@@ -2,18 +2,20 @@ import React, { Fragment } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchIcon from "@mui/icons-material/Search";
 import styles from "./Navbar.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useStateValue } from "../Cart/StateProvider";
-// import { auth } from "../Auth/firebase";
+import { auth } from "../Auth/firebase";
 export default function Navbar() {
   // const[state, dispatch] = StateProvider();
+  const navigate = useNavigate();
   const [{ basket, user }] = useStateValue();
-  console.log(basket);
+  // console.log(basket);
 
   const handleAuthenticaton = () => {
-    // if (user) {
-    //   auth.signOut();
-    // }
+    if (user) {
+      auth.signOut();
+      navigate("/");
+    }
   };
   return (
     <Fragment>
@@ -30,7 +32,7 @@ export default function Navbar() {
         </div>
 
         <div className={styles.header__nav}>
-          <Link to="/login" className={styles.header_link}>
+          <Link to={!user && "/login"} className={styles.header_link}>
             <div
               onClick={handleAuthenticaton}
               className={styles.header__option}

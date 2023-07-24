@@ -3,7 +3,7 @@ import styles from "./Product.module.css";
 import { useStateValue } from "../Cart/StateProvider";
 function Product({ id, title, image, price, rating }) {
   const [{ basket }, dispatch] = useStateValue();
-  console.log(basket);
+  // console.log(basket);
   function AddToCartHandler() {
     dispatch({
       type: "ADD_TO_BASKET",

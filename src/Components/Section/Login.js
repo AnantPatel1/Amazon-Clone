@@ -1,41 +1,32 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import classes from "./Login.module.css";
-// import { auth } from "../Auth/firebase";
+import { auth } from "../Auth/firebase";
 function Login() {
-  //   const navigate = useNavigate();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   // Event handler for sign-in button click
   const signIn = (event) => {
     event.preventDefault();
-    // auth
-    //   .signInWithEmailAndPassword(email, password)
-    //   .then(() => {
-    //     navigate("/");
-    //   })
-    //   .catch((error) => alert(error.message));
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => alert(error.message));
   };
   const register = (event) => {
     event.preventDefault();
-    // auth
-    //   .createUserWithEmailAndPassword(email, password)
-    //   .then((auth) => {
-    //     if (auth) {
-    //       navigate("/");
-    //     }
-    //   })
-    //   .catch((error) => alert(error.message));
-  };
-
-  const onEmailChangeHandler = (event) => {
-    setEmail(event.target.value);
-  };
-
-  // Event handler for password input change
-  const onPasswardChangeHandler = (event) => {
-    setPassword(event.target.value);
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((auth) => {
+        if (auth) {
+          navigate("/");
+        }
+      })
+      .catch((error) => alert(error.message));
   };
 
   return (
@@ -53,13 +44,17 @@ function Login() {
 
         <form>
           <h5>E-mail</h5>
-          <input type="text" value={email} onChange={onEmailChangeHandler} />
+          <input
+            type="text"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
 
           <h5>Password</h5>
           <input
             type="password"
             value={password}
-            onChange={onPasswardChangeHandler}
+            onChange={(event) => setPassword(event.target.value)}
           />
 
           <button
