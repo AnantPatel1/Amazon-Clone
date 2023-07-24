@@ -7,6 +7,7 @@ import Login from "./Components/Section/Login";
 import { useStateValue } from "./Components/Cart/StateProvider";
 import { useEffect } from "react";
 import { auth } from "./Components/Auth/firebase";
+import { ProductProvider } from "./Store/ProductContext";
 function App() {
   const [{ user }, dispatch] = useStateValue();
   useEffect(() => {
@@ -49,7 +50,11 @@ function App() {
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <ProductProvider>
+      <RouterProvider router={router} />
+    </ProductProvider>
+  );
 }
 
 export default App;

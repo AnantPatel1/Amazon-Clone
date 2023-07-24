@@ -6,6 +6,7 @@ import image2 from "../../Assets/D70978891_INWLD_BAU_Unrec_Uber_PC_Hero_3000x120
 import image3 from "../../Assets/TallHero_3000X1200_Unrec._CB593464763_.jpg";
 import image4 from "../../Assets/BAU_FJ_PC_3000x1200._CB614018780_.jpg";
 import AvailableProduct from "../Product/AvailableProduct";
+import Jwelery from "../Product/ItemTypes/Jwelery";
 const Header = () => {
   return (
     <Fragment>
@@ -42,6 +43,12 @@ const Header = () => {
             </Carousel.Item>
           </Carousel>
           <AvailableProduct />
+          <img
+            src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/c98e98b6-8989-4e0c-b64e-de0a128254ce._CR0%2C0%2C3000%2C600_SX1920_.jpg"
+            alt="jwelery"
+            className={styles.jwelery_banner}
+          />
+          <Jwelery />
         </div>
       </div>
     </Fragment>
