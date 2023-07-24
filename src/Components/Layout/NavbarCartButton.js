@@ -2,7 +2,7 @@ import React from "react";
 import CheckOutProduct from "../Product/CheckOutProduct";
 import { useStateValue } from "../Cart/StateProvider";
 import classes from "./NavbarCartButton.module.css";
-import Subtotal from "../Product/Subtotal";
+import Subtotal from "../Section/Subtotal";
 function NavbarCartButton() {
   const [{ basket }] = useStateValue();
 
