@@ -20,13 +20,14 @@ function App() {
       } else {
         dispatch({
           type: "SET_USER",
-          user: authUser,
+          user: null,
         });
       }
     });
-
-    check();
-  }, [dispatch]);
+    return () => {
+      check();
+    };
+  }, []);
   console.log("user is >>", user);
   const router = createBrowserRouter([
     {

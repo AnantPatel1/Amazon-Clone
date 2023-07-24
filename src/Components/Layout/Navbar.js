@@ -13,10 +13,20 @@ export default function Navbar() {
 
   const handleAuthenticaton = () => {
     if (user) {
-      auth.signOut();
-      navigate("/");
+      auth
+        .signOut()
+        .then(() => {
+          navigate("/");
+        })
+        .catch((error) => alert(error.message));
     }
   };
+  // const handleAuthenticaton = () => {
+  //   if (user) {
+  //     auth.signOut();
+  //     navigate("/");
+  //   }
+  // };
   return (
     <Fragment>
       <div className={styles.header}>

@@ -16,11 +16,6 @@ const reducer = (state, action) => {
         basket: [...state.basket, action.item],
         // we are returning the state but we are over writing the basket value
       };
-    case "SET_USER":
-      return {
-        ...state,
-        user: action.user,
-      };
     case "REMOVE_FROM_BASKET":
       let newBasket = [...state.basket];
       const index = state.basket.findIndex(
@@ -36,6 +31,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         basket: newBasket,
+      };
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.user,
       };
     default:
       return state;
