@@ -8,7 +8,7 @@ export default function Jwelery({ products }) {
   const jwelery = product.filter(
     (item) => item.type === "jwelery" && item.id > 5
   );
-  console.log(jwelery);
+  // console.log(jwelery);
 
   const productDivs = [];
 

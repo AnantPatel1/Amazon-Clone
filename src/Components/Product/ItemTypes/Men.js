@@ -6,7 +6,7 @@ import { useProducts } from "../../../Store/ProductContext";
 export default function Men() {
   const product = useProducts();
   const men = product.filter((item) => item.type === "Mens" && item.id > 5);
-  console.log(men);
+  // console.log(men);
 
   const productDivs = [];
 

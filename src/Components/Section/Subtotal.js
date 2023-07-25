@@ -7,9 +7,9 @@ function Subtotal() {
   const [{ basket, user }] = useStateValue();
 
   const formatCurrency = (value) => {
-    return value.toLocaleString("en-US", {
+    return value.toLocaleString("en-GB", {
       style: "currency",
-      currency: "USD",
+      currency: "INR",
     });
   };
 

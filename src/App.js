@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { auth } from "./Components/Auth/firebase";
 import { ProductProvider } from "./Store/ProductContext";
 function App() {
+  // eslint-disable-next-line no-unused-vars
   const [{ user }, dispatch] = useStateValue();
   useEffect(() => {
     const check = auth.onAuthStateChanged((authUser) => {
@@ -27,8 +28,8 @@ function App() {
     return () => {
       check();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log("user is >>", user);
   const router = createBrowserRouter([
     {
       path: "/",

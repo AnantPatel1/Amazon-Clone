@@ -12,7 +12,7 @@ export function ProductProvider({ children }) {
           "https://clone-a92df-default-rtdb.firebaseio.com/clone.json"
         );
         const responseData = await response.json();
-        console.log(responseData);
+        // console.log(responseData);
         const loadedProducts = [];
         for (const key in responseData) {
           loadedProducts.push({

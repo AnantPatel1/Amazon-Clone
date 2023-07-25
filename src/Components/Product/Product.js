@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Product.module.css";
 import { useStateValue } from "../Cart/StateProvider";
 function Product(props) {
+  // eslint-disable-next-line no-unused-vars
   const [{ basket }, dispatch] = useStateValue();
   // console.log(basket);
   function AddToCartHandler() {
@@ -28,7 +29,7 @@ function Product(props) {
           {Array(props.rating)
             .fill()
             .map((_, i) => (
-              <p>⭐</p>
+              <p key={i}>⭐</p>
             ))}
         </div>
       </div>

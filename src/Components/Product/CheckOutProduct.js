@@ -1,10 +1,11 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { useStateValue } from "../Cart/StateProvider";
 import classes from "./CheckOutProduct.module.css";
 
 function CheckOutProduct({ id, image, title, price, rating }) {
+  // eslint-disable-next-line no-unused-vars
   const [{ basket }, dispatch] = useStateValue();
-  console.log(basket);
+  // console.log(basket);
 
   const removeFromBasket = () => {
     dispatch({
