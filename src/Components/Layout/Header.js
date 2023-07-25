@@ -54,7 +54,7 @@ const Header = () => {
           <Jwelery />
           <img
             src={menbanner}
-            alt="jwelery"
+            alt="Men's Store"
             className={styles.jwelery_banner}
           />
           <Men />

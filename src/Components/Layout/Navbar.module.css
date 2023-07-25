@@ -76,8 +76,16 @@
   margin-right: 10px;
   color: white;
 }
-@media screen and (max-width: 500px) {
-  .header__searchInput {
-    display: none;
+@media screen and (max-width: 375px) {
+  .header__logo {
+    width: 60px;
+  }
+  .header {
+    width: 22rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .header {
+    width: 24rem;
   }
 }

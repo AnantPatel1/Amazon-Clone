@@ -31,3 +31,8 @@
   padding: 10px;
   margin: 50% 0% 50% 0%;
 }
+@media screen and (max-width: 768px) {
+  /* .subtotal {
+    width: 100%;
+  } */
+}

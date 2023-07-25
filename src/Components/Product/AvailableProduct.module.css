@@ -3,9 +3,19 @@
   z-index: 1;
   margin-left: 5px;
   margin-right: 5px;
-  transition: transform 0.3s ease;
+
+  justify-content: center;
+  align-items: center;
+  /* height: 400px; */
 }
-.home__row:hover {
-  z-index: 1000;
-  cursor: pointer;
+
+@media screen and (max-width: 425px) {
+  .home__row {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 320px) {
+  .home__row {
+    width: 120%;
+  }
 }

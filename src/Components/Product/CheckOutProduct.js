@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { useStateValue } from "../Cart/StateProvider";
 import classes from "./CheckOutProduct.module.css";
 
@@ -26,30 +26,35 @@ function CheckOutProduct({ id, image, title, price, rating }) {
   };
 
   return (
-    <div className={classes.checkoutProduct}>
-      <img
-        className={classes.checkoutProduct__image}
-        src={image}
-        alt="checkout_image"
-      />
+    <div className={classes.main}>
+      <div className={classes.checkoutProduct}>
+        <img
+          className={classes.checkoutProduct__image}
+          src={image}
+          alt="checkout_image"
+        />
 
-      <div className={classes.checkoutProduct__info}>
-        <p className={classes.checkoutProduct__title}>{title}</p>
-        <p className={classes.checkoutProduct__price}>
-          <small>₹</small>
-          <strong>{price}</strong>
-        </p>
-        <div className={classes.checkoutProduct__rating}>
-          {Array(rating)
-            .fill()
-            .map((_, i) => (
-              <p>⭐</p>
-            ))}
+        <div className={classes.checkoutProduct__info}>
+          <p className={classes.checkoutProduct__title}>{title}</p>
+          <p className={classes.checkoutProduct__price}>
+            <small>₹</small>
+            <strong>{price}</strong>
+          </p>
+          <div className={classes.checkoutProduct__rating}>
+            {Array(rating)
+              .fill()
+              .map((_, i) => (
+                <p>⭐</p>
+              ))}
+          </div>
         </div>
-
-        <button onClick={removeFromBasket}>Remove from Basket</button>
-        <button onClick={addToBasket}>Add to Basket</button>
       </div>
+      <button className={classes.btn} onClick={removeFromBasket}>
+        Remove from Basket
+      </button>
+      <button className={classes.btn} onClick={addToBasket}>
+        Add to Basket
+      </button>
     </div>
   );
 }
